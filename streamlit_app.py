@@ -5,18 +5,18 @@ import datetime
 BASE_URL = "http://localhost:8000"
 
 st.set_page_config(
-    page_title="🌍 Travel Planner Agentic Application",
-    page_icon="🌍",
+    page_title="WanderBot - Travel Planner",
+    page_icon="",
     layout="centered",
     initial_sidebar_state="expanded",
 )
 
-st.title("🌍 Travel Planner Agentic Application")
+st.title("WanderBot")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-st.header("How can I help you in planning a trip? Let me know where do you want to visit.")
+st.header("How can I help you in planning a trip? Let me know where you want to visit.")
 
 with st.form(key="query_form", clear_on_submit=True):
     user_input = st.text_input("User Input", placeholder="e.g. Plan a trip to Goa for 5 days")
@@ -30,10 +30,10 @@ if submit_button and user_input.strip():
 
         if response.status_code == 200:
             answer = response.json().get("answer", "No answer returned.")
-            markdown_content = f"""# 🌍 AI Travel Plan
+            markdown_content = f"""# AI Travel Plan
 
 **Generated:** {datetime.datetime.now().strftime('%Y-%m-%d at %H:%M')}  
-**Created by:** Atriyo's Travel Agent
+**Created by:** WanderBot
 
 ---
 
