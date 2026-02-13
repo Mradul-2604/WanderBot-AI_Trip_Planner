@@ -1,5 +1,5 @@
 '''
-streamlit run streamlit.py
+streamlit run streamlit_app.py
 '''
 
 '''
